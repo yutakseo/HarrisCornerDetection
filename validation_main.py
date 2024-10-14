@@ -33,7 +33,7 @@ class Main:
         sensor = Sensor(self.MAP)
 
         # 최외곽 지점 추출 및 배치
-        corner_position = ComputerVision(self.MAP).harris_corner(5, 3, 0.01)
+        corner_position = ComputerVision(self.MAP).harris_corner(2, 3, 0.01)
         #corner_position = ComputerVision(self.MAP).canny_edge(10000,20000)
         print(np.array(corner_position))
         for i in corner_position:
@@ -63,10 +63,16 @@ class Main:
 if __name__ == "__main__":
     for i in range(1):
         #map_name = "truncated_140by140"
-        map_name = "site2_uav_pad"
+        map_name = "site2_uav"
         algorithm = Main(map_name, 1, 1).run()
         
-    for i in range(1):
+        map_name = "site3_uav"
+        algorithm = Main(map_name, 1, 1).run()
+        
+        map_name = "site4_uav"
+        algorithm = Main(map_name, 1, 1).run()
+        
+    """for i in range(1):
         map_name = "truncated_140by140"
         algorithm = Main(map_name, 1, 1).run()
 
@@ -74,4 +80,4 @@ if __name__ == "__main__":
         algorithm = Main(map_name, 1, 1).run()
         
         map_name = "rectangle_140by140"
-        algorithm = Main(map_name, 1, 1).run()
+        algorithm = Main(map_name, 1, 1).run()"""

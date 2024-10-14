@@ -20,7 +20,7 @@ class ComputerVision():
         self.vis.showJetMap("",np.array(self.result))
         
         # 값 처리
-        threshold = np.percentile(self.result, 98)
+        threshold = np.percentile(self.result, 99)
         print(threshold)
         
         max_val = np.max(self.result)
